@@ -7,7 +7,7 @@
     "dev": "vite",
     "build": "vite build",
     "serve": "vite preview",
-    "deploy": "npm run build && gh-pages -d docs"
+    "deploy": "npm run build && gh-pages -d docs -r https://github.com/your-username/your-repository.git"
   },
   "license": "MIT",
   "devDependencies": {
