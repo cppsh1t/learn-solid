@@ -9,6 +9,7 @@ import Sleep from "./components/Sleep";
 import { Dynamic } from "solid-js/web";
 import { createEffect, createMemo, createSignal, For, Show, type Accessor } from "solid-js";
 import { createStore } from "solid-js/store";
+import Graph from "./components/Graph";
 
 const Greet = (props: { name: string }) => {
   return <div>Hello {props.name}</div>;
@@ -28,9 +29,7 @@ const todoData = [
 const App: Component = () => {
   return (
     <div class={styles.app}>
-      {/* <Greet name='shit'></Greet> */}
-      {/* <TodoList data={todoData}></TodoList> */}
-      <Sleep></Sleep>
+      <Graph></Graph>
     </div>
   );
 };
