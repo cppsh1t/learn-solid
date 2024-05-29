@@ -1,11 +1,14 @@
-import { type Component, ErrorBoundary } from "solid-js";
+import { type Component, ErrorBoundary, Setter } from "solid-js";
 
 import logo from "./logo.svg";
 import styles from "./App.module.css";
 import Counter from "./components/Counter";
 import Test from "./components/Test";
 import TodoList from "./components/TodoList";
+import Sleep from "./components/Sleep";
 import { Dynamic } from "solid-js/web";
+import { createEffect, createMemo, createSignal, For, Show, type Accessor } from "solid-js";
+import { createStore } from "solid-js/store";
 
 const Greet = (props: { name: string }) => {
   return <div>Hello {props.name}</div>;
@@ -24,9 +27,10 @@ const todoData = [
 
 const App: Component = () => {
   return (
-    <div class={styles.App}>
+    <div class={styles.app}>
       {/* <Greet name='shit'></Greet> */}
-      <TodoList data={todoData}></TodoList>
+      {/* <TodoList data={todoData}></TodoList> */}
+      <Sleep></Sleep>
     </div>
   );
 };
