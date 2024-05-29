@@ -3,6 +3,10 @@ import solidPlugin from 'vite-plugin-solid';
 // import devtools from 'solid-devtools/vite';
 
 export default defineConfig({
+  build: {
+    outDir: 'docs', 
+    target: 'esnext',
+  },
   plugins: [
     /* 
     Uncomment the following line to enable solid-devtools.
@@ -13,8 +17,5 @@ export default defineConfig({
   ],
   server: {
     port: 3000,
-  },
-  build: {
-    target: 'esnext',
   },
 });
