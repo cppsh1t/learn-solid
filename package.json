@@ -7,7 +7,7 @@
     "dev": "vite",
     "build": "vite build",
     "serve": "vite preview",
-    "deploy": "npm run build && gh-pages -d docs -r https://github.com/your-username/your-repository.git"
+    "deploy": "gh-pages -d docs -r https://github.com/cppsh1t/learn-solid.git"
   },
   "license": "MIT",
   "devDependencies": {
