@@ -4,7 +4,7 @@ import solidPlugin from 'vite-plugin-solid';
 
 export default defineConfig({
   build: {
-    outDir: 'docs', 
+    outDir: 'dist', 
     target: 'esnext',
   },
   base: '/learn-solid',

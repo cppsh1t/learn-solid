@@ -1,5 +1,9 @@
 import { createEffect, createMemo, createSignal, Show } from "solid-js";
 
+/* 
+using: singal, effect, memo, Show
+*/
+
 function Counter() {
     const [count, setCount] = createSignal(0)
     const handleClick = () => {

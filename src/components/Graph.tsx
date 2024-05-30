@@ -1,6 +1,10 @@
 import { Graph as XGraph, } from "@antv/x6";
-import { createSignal, onCleanup } from "solid-js";
+import { createSignal } from "solid-js";
 import { register } from '../utils/x6-solid-shape'
+
+/*
+using: x6, singal
+*/
 
 function Graph() {
   XGraph.registerNode("custom-node", {

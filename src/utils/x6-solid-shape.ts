@@ -13,9 +13,8 @@ type SolidShapeConfig = Node.Properties & {
 export function register(config: SolidShapeConfig) {
   const ele = document.createElement('div')
   render(config.component, ele)
-  const htmlConfig = { ...config };
-  htmlConfig["html"] = () => {
+  config["html"] = () => {
     return ele;
   };
-  OriginShape.HTML.register(htmlConfig as unknown as HTML.HTMLShapeConfig);
+  OriginShape.HTML.register(config as unknown as HTML.HTMLShapeConfig);
 }

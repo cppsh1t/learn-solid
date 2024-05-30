@@ -1,5 +1,9 @@
-import { createEffect, createMemo, createSignal, For, Show } from "solid-js";
+import { createSignal, For } from "solid-js";
 import { random } from "radash";
+
+/*
+using: singal, For
+*/
 
 function Item(props: {
   index: number;

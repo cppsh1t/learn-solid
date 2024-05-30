@@ -1,5 +1,9 @@
 import { sleep } from "radash";
-import { Suspense, lazy, createResource } from "solid-js";
+import { Suspense, createResource } from "solid-js";
+
+/*
+using: Suspense, resource
+*/
 
 function Sleep() {
 
