@@ -1,6 +1,6 @@
-import { Graph as XGraph } from "@antv/x6";
-import { Shape } from "../utils/x6Util";
+import { Graph as XGraph, } from "@antv/x6";
 import { createSignal, onCleanup } from "solid-js";
+import { register } from '../utils/x6-solid-shape'
 
 function Graph() {
   XGraph.registerNode("custom-node", {
@@ -50,12 +50,13 @@ function Graph() {
     </div>
   }
 
-  Shape.Solid.register({
+  register({
     shape: 'custom-solid-node',
     width: 100,
     height: 100,
     component: SolidNode,
   })
+
   let container: HTMLDivElement | undefined;
   const content = <div ref={container}>nothing now</div>;
   const graph = new XGraph({
