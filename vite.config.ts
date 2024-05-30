@@ -7,6 +7,7 @@ export default defineConfig({
     outDir: 'docs', 
     target: 'esnext',
   },
+  base: '/learn-solid',
   plugins: [
     /* 
     Uncomment the following line to enable solid-devtools.
