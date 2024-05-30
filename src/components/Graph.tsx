@@ -1,4 +1,6 @@
 import { Graph as XGraph } from "@antv/x6";
+import { Shape } from "../utils/x6Util";
+import { createSignal, onCleanup } from "solid-js";
 
 function Graph() {
   XGraph.registerNode("custom-node", {
@@ -37,6 +39,23 @@ function Graph() {
       },
     },
   }, true);
+
+  function SolidNode() {
+    const [count, setCount] = createSignal(0)
+
+    return <div style={{width: '100px', height: '60px', "background-color": '#fff', "border-radius": '8px'}}>
+      {count()}
+      <br/>
+      <button onClick={() => setCount(count() + 1)}>增加</button>
+    </div>
+  }
+
+  Shape.Solid.register({
+    shape: 'custom-solid-node',
+    width: 100,
+    height: 100,
+    component: SolidNode,
+  })
   let container: HTMLDivElement | undefined;
   const content = <div ref={container}>nothing now</div>;
   const graph = new XGraph({
@@ -64,13 +83,6 @@ function Graph() {
       ],
     },
   });
-  // graph.addNode({
-  //   shape: "rect",
-  //   x: 100,
-  //   y: 40,
-  //   width: 100,
-  //   height: 40,
-  // });
   const source = graph.addNode({
     shape: 'custom-node', // 可以直接使用上面注册过的 shape
     x: 40,
@@ -95,6 +107,12 @@ function Graph() {
         targetMarker: null 
       },
     },
+  })
+
+  const other = graph.addNode({
+    shape: 'custom-solid-node',
+    x: 260,
+    y: 280,
   })
 
   graph.centerContent()
