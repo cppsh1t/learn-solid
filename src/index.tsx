@@ -10,6 +10,7 @@ import ErrorControl from "./components/ErrorControl";
 import Graph from "./components/Graph";
 import TodoList from "./components/TodoList";
 import Sleep from "./components/Sleep";
+import { doRouting } from "./router";
 
 const root = document.getElementById("root");
 
@@ -21,14 +22,11 @@ if (import.meta.env.DEV && !(root instanceof HTMLElement)) {
 
 render(
   () => (
-    <Router>
-      <Route path="/learn-solid" component={() => <p>welcome to solid</p>} />
-      <Route path="/learn-solid/counter" component={Counter} />
-      <Route path="/learn-solid/error" component={ErrorControl} />
-      <Route path="/learn-solid/graph" component={Graph} />
-      <Route path="/learn-solid/todo" component={() => TodoList({data: []})} />
-      <Route path="/learn-solid/sleep" component={Sleep} />
-    </Router>
+    <div>
+      {
+        doRouting()
+      }
+    </div>
   ),
   root!
 );
