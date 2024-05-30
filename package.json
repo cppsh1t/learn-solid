@@ -9,7 +9,7 @@
     "dev": "vite",
     "build": "vite build",
     "serve": "vite preview",
-    "deploy": "gh-pages -d dist -r https://github.com/cppsh1t/learn-solid.git"
+    "deploy": "npm run build & gh-pages -d dist -r https://github.com/cppsh1t/learn-solid.git"
   },
   "license": "MIT",
   "devDependencies": {
