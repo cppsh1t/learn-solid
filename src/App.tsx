@@ -1,15 +1,6 @@
-import {
-  type Component,
-  ErrorBoundary,
-  Setter,
-  JSX,
-  createSignal,
-} from "solid-js";
+import { createSignal, For } from "solid-js";
 
 import Counter from "./components/Counter";
-import TodoList from "./components/TodoList";
-import Sleep from "./components/Sleep";
-import ErrControl from "./components/ErrorControl";
 import { Dynamic } from "solid-js/web";
 import { getRouterConfig } from "./router";
 
@@ -20,25 +11,22 @@ const todoData = [
 ];
 
 const App = () => {
-  let inputEle: HTMLInputElement | undefined;
-  const map = new Map<string, () => JSX.Element>();
-  getRouterConfig().forEach((item) => {
-    map.set(item.url, item.component);
-  });
+  const items = getRouterConfig();
   const [current, setCurrent] = createSignal(Counter);
-  const switchComponent = () => {
-    const result = map.get(inputEle?.value ?? "")!;
-    setCurrent(() => result);
-  };
 
   return (
     <div>
       <p>welcome to solidjs</p>
       <div style={{ display: "flex", gap: "10px" }}>
-        <input type="text" ref={inputEle} />
-        <button onClick={switchComponent}>switch</button>
+        <For each={items}>
+          {(item) => (
+            <button onClick={() => setCurrent(() => item.component)}>
+              {item.url}
+            </button>
+          )}
+        </For>
       </div>
-      <div style={{background: '#ccc'}}>
+      <div style={{ background: "#ccc" }}>
         <p>Dynamic Part</p>
         <Dynamic component={current()} />
       </div>
