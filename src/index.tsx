@@ -2,14 +2,6 @@
 import { render } from "solid-js/web";
 
 import "./index.css";
-import App from "./App";
-
-import Counter from "./components/Counter";
-import { Router, Route } from "@solidjs/router";
-import ErrorControl from "./components/ErrorControl";
-import Graph from "./components/Graph";
-import TodoList from "./components/TodoList";
-import Sleep from "./components/Sleep";
 import { doRouting } from "./router";
 
 const root = document.getElementById("root");

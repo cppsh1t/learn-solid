@@ -1,4 +1,4 @@
-import { createSignal, For } from "solid-js";
+import { createSignal, For, splitProps } from "solid-js";
 import { random } from "radash";
 
 /*

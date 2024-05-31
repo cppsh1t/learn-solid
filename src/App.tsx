@@ -1,26 +1,21 @@
 import { createSignal, For } from "solid-js";
 
-import Counter from "./components/Counter";
 import { Dynamic } from "solid-js/web";
 import { getRouterConfig } from "./router";
-
-const todoData = [
-  { text: "hahah", weight: 400 },
-  { text: "i am second", weight: 400 },
-  { text: "important", weight: 700 },
-];
+import TailwindTest from "./components/TailwindTest";
 
 const App = () => {
   const items = getRouterConfig();
-  const [current, setCurrent] = createSignal(Counter);
+  items.splice(0, 1)
+  const [current, setCurrent] = createSignal(TailwindTest);
 
   return (
     <div>
       <p>welcome to solidjs</p>
-      <div style={{ display: "flex", gap: "10px" }}>
+      <div style={{ display: "flex", gap: "10px", "flex-wrap": 'wrap' }}>
         <For each={items}>
           {(item) => (
-            <button onClick={() => setCurrent(() => item.component)}>
+            <button class="h-10 p-1 bg-sky-200 border-none rounded-xl shadow-lg" onClick={() => setCurrent(() => item.component)}>
               {item.url}
             </button>
           )}

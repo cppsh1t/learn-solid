@@ -9,13 +9,17 @@
     "dev": "vite",
     "build": "vite build",
     "serve": "vite preview",
-    "deploy": "npm run build & gh-pages -d dist -r https://github.com/cppsh1t/learn-solid.git"
+    "deploy": "npm run build & gh-pages -d dist -r https://github.com/cppsh1t/learn-solid.git",
+    "deploy:direct": "gh-pages -d dist -r https://github.com/cppsh1t/learn-solid.git"
   },
   "license": "MIT",
   "devDependencies": {
     "@antv/x6": "^2.18.1",
+    "autoprefixer": "^10.4.19",
     "gh-pages": "^6.1.1",
+    "postcss": "^8.4.38",
     "solid-devtools": "^0.29.2",
+    "tailwindcss": "^3.4.3",
     "typescript": "^5.3.3",
     "vite": "^5.0.11",
     "vite-plugin-solid": "^2.8.2"

@@ -5,6 +5,13 @@ import Graph from "../components/Graph";
 import Sleep from "../components/Sleep";
 import { Route, Router } from "@solidjs/router";
 import App from "../App";
+import SwitchTest from "../components/SwitchTest";
+import LifeTest from "../components/LifeTest";
+import Nest from "../components/Nest";
+import MergeTest from "../components/MergeTest";
+import SplitTest from "../components/SplitTest";
+import ChildrenTest from "../components/ChildrenTest";
+import TailwindTest from "../components/TailwindTest";
 
 interface RouterConfigItem {
   url: string;
@@ -40,6 +47,34 @@ const routerConfig: RouterConfig = {
       url: "/sleep",
       component: Sleep,
     },
+    {
+      url: "/switch",
+      component: SwitchTest
+    },
+    {
+      url: "/life",
+      component: LifeTest
+    },
+    {
+      url: "/nest",
+      component: Nest
+    },
+    {
+      url: '/merge',
+      component: MergeTest
+    },
+    {
+      url: '/split',
+      component: SplitTest
+    },
+    {
+      url: '/children',
+      component: ChildrenTest
+    },
+    {
+      url: '/tailwind',
+      component: TailwindTest
+    }
   ],
 };
 
