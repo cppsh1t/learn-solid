@@ -15,7 +15,7 @@ const App = () => {
       <div style={{ display: "flex", gap: "10px", "flex-wrap": 'wrap' }}>
         <For each={items}>
           {(item) => (
-            <button class="h-10 p-1 bg-sky-200 border-none rounded-xl shadow-lg" onClick={() => setCurrent(() => item.component)}>
+            <button class="h-10 p-1 bg-sky-200 border-none rounded-xl shadow-lg focus:bg-sky-300" onClick={() => setCurrent(() => item.component)}>
               {item.url}
             </button>
           )}
