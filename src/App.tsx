@@ -20,7 +20,7 @@ const App = () => {
       <div style={{ display: "flex", gap: "10px", "flex-wrap": 'wrap' }}>
         <For each={items}>
           {(item) => (
-            <button class="h-10 p-1 bg-sky-200 border-none rounded-xl shadow-lg" onClick={() => setCurrent(() => item.component)}>
+            <button class="h-10 px-3 bg-sky-200 hover:bg-sky-300 active:bg-sky-500 border-none rounded-lg shadow-lg hover:shadow-xl" onClick={() => setCurrent(() => item.component)}>
               {getLast(item.url)}
             </button>
           )}
