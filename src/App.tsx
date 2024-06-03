@@ -2,8 +2,9 @@ import { createSignal, For } from "solid-js";
 
 import { Dynamic } from "solid-js/web";
 import { getRouterConfig } from "./router";
-import TailwindTest from "./components/TailwindTest";
 import { random } from "radash";
+
+const btnStyle = "h-10 px-3 bg-sky-200 hover:bg-sky-300 active:bg-sky-500 border-none rounded-lg shadow-lg hover:shadow-xl"
 
 const App = () => {
   const items = getRouterConfig();
@@ -21,13 +22,13 @@ const App = () => {
       <div style={{ display: "flex", gap: "10px", "flex-wrap": 'wrap' }}>
         <For each={items}>
           {(item) => (
-            <button class="h-10 px-3 bg-sky-200 hover:bg-sky-300 active:bg-sky-500 border-none rounded-lg shadow-lg hover:shadow-xl" onClick={() => setCurrent(() => item.component)}>
+            <button class={btnStyle} onClick={() => setCurrent(() => item.component)}>
               {getLast(item.url)}
             </button>
           )}
         </For>
       </div>
-      <div style={{ background: "#ccc" }}>
+      <div class="bg-[#ccc] mt-[30px]">
         <p>Dynamic Part</p>
         <Dynamic component={current()} />
       </div>
