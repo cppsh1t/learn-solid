@@ -9,6 +9,11 @@ const App = () => {
   items.splice(0, 1)
   const [current, setCurrent] = createSignal(TailwindTest);
 
+  const getLast = (str: string) => {
+    const arr = str.split('/')
+    return arr[arr.length - 1]
+  }
+
   return (
     <div>
       <p>welcome to solidjs</p>
@@ -16,7 +21,7 @@ const App = () => {
         <For each={items}>
           {(item) => (
             <button class="h-10 p-1 bg-sky-200 border-none rounded-xl shadow-lg" onClick={() => setCurrent(() => item.component)}>
-              {item.url}
+              {getLast(item.url)}
             </button>
           )}
         </For>
