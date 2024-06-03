@@ -3,11 +3,12 @@ import { createSignal, For } from "solid-js";
 import { Dynamic } from "solid-js/web";
 import { getRouterConfig } from "./router";
 import TailwindTest from "./components/TailwindTest";
+import { random } from "radash";
 
 const App = () => {
   const items = getRouterConfig();
   items.splice(0, 1)
-  const [current, setCurrent] = createSignal(TailwindTest);
+  const [current, setCurrent] = createSignal(items[random(0, items.length - 1)].component);
 
   const getLast = (str: string) => {
     const arr = str.split('/')

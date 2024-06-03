@@ -12,6 +12,7 @@ import MergeTest from "../components/MergeTest";
 import SplitTest from "../components/SplitTest";
 import ChildrenTest from "../components/ChildrenTest";
 import TailwindTest from "../components/TailwindTest";
+import UserShow from "../components/UserShow";
 
 interface RouterConfigItem {
   url: string;
@@ -74,6 +75,10 @@ const routerConfig: RouterConfig = {
     {
       url: '/tailwind',
       component: TailwindTest
+    },
+    {
+      url: '/usershow',
+      component: UserShow
     }
   ],
 };
