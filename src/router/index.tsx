@@ -1,4 +1,4 @@
-import { For, JSX } from "solid-js";
+import { For, JSX, lazy } from "solid-js";
 import Counter from "../components/Counter";
 import ErrorControl from "../components/ErrorControl";
 import Graph from "../components/Graph";
@@ -13,6 +13,7 @@ import SplitTest from "../components/SplitTest";
 import ChildrenTest from "../components/ChildrenTest";
 import TailwindTest from "../components/TailwindTest";
 import UserShow from "../components/UserShow";
+import ContextTest from "../components/ContexxtTest";
 
 interface RouterConfigItem {
   url: string;
@@ -42,7 +43,7 @@ const routerConfig: RouterConfig = {
     },
     {
       url: "/graph",
-      component: Graph,
+      component: lazy(() => import("../components/Graph")),
     },
     {
       url: "/sleep",
@@ -79,6 +80,10 @@ const routerConfig: RouterConfig = {
     {
       url: '/usershow',
       component: UserShow
+    },
+    {
+      url: '/context',
+      component: ContextTest
     }
   ],
 };
@@ -113,7 +118,6 @@ export function doRouting() {
     <Router>
       <For each={arr}>
         {(item) => {
-          console.log(`map ${item.component.name} to ${item.url}`);
           return <Route path={item.url} component={item.component}></Route>;
         }}
       </For>

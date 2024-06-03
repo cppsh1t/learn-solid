@@ -3,6 +3,7 @@ import { render } from "solid-js/web";
 
 import "./index.css";
 import { doRouting } from "./router";
+import { CounterProvider } from "./components/ContexxtTest";
 
 const root = document.getElementById("root");
 
@@ -14,11 +15,11 @@ if (import.meta.env.DEV && !(root instanceof HTMLElement)) {
 
 render(
   () => (
-    <div>
+    <CounterProvider count={42}>
       {
         doRouting()
       }
-    </div>
+    </CounterProvider>
   ),
   root!
 );
