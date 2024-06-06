@@ -6,6 +6,8 @@ import { register } from "../utils/x6-solid-shape";
 using: x6, singal
 */
 
+//FIXME: BUG!!!!
+
 function Graph() {
   XGraph.registerNode(
     "custom-node",
@@ -97,7 +99,7 @@ function Graph() {
     },
   });
   const source = graph.addNode({
-    shape: "custom-node", // 可以直接使用上面注册过的 shape
+    shape: "custom-node", 
     x: 40,
     y: 40,
     label: "hello",
@@ -126,6 +128,11 @@ function Graph() {
     shape: "custom-solid-node",
     x: 260,
     y: 280,
+  });
+  const other2 = graph.addNode({
+    shape: "custom-solid-node",
+    x: 0,
+    y: 0,
   });
 
   graph.centerContent();
