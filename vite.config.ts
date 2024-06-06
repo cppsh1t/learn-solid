@@ -1,10 +1,10 @@
-import { defineConfig } from 'vite';
-import solidPlugin from 'vite-plugin-solid';
+import { defineConfig } from 'vite'
+import solidPlugin from 'vite-plugin-solid'
 // import devtools from 'solid-devtools/vite';
 
 export default defineConfig({
   build: {
-    outDir: 'dist', 
+    outDir: 'dist',
     target: 'esnext',
   },
   base: '/learn-solid',
@@ -19,4 +19,4 @@ export default defineConfig({
   server: {
     port: 3000,
   },
-});
+})
